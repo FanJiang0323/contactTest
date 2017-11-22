@@ -2,6 +2,7 @@ package com.example.administrator.test.Adapter;
 
 import android.content.Context;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 import com.example.administrator.test.Date.ContactDate;
 import com.example.administrator.test.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -21,16 +23,17 @@ import java.util.List;
 
 public class ContactAdapter extends BaseAdapter {
 
-    private List<ContactDate> list = null;
+    private ArrayList<ContactDate> list = null;
     private Context mContext;
 
     public ContactAdapter() {
         super();
     }
 
-    public ContactAdapter(Context mContext, List<ContactDate> list) {
+    public ContactAdapter(Context mContext, ArrayList<ContactDate> list) {
         this.mContext = mContext;
         this.list = list;
+        Log.i("ContactAdapter","list length is:" + list.size());
     }
 
     @Override
@@ -65,7 +68,8 @@ public class ContactAdapter extends BaseAdapter {
         ContactDate contactDate = getItem(position);
         holder.textView_Sort.setText(contactDate.getSort());
         holder.textView_ContactName.setText(contactDate.getContactName());
-        holder.imageView_ContactIcon.setImageURI(contactDate.getIconUri());
+//        holder.imageView_ContactIcon.setImageURI(contactDate.getIconUri());
+        holder.textView_Sort.setVisibility(contactDate.getVisible());
 
         return convertView;
     }

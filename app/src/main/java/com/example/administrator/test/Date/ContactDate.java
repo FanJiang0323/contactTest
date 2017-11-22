@@ -1,6 +1,7 @@
 package com.example.administrator.test.Date;
 
 import android.net.Uri;
+import android.view.View;
 
 import java.net.URL;
 
@@ -13,12 +14,13 @@ public class ContactDate {
     public  String  contactName = "";      //联系人姓名
     public  Uri iconUri = null;             //头像地址
     public  boolean selected=false;     //是否被选中
+    public  int visible= View.VISIBLE;      //是否显示字母    View.GONE  隐藏      View.INVISIBLE  不可见，但仍然占据空间     View.VISIBLE   可见
 
     public String getSort(){
         return  sort;
     }
 
-    public void setcontactName(String sort){
+    public void setSort(String sort){
         this.sort = sort;
     }
 
@@ -44,5 +46,13 @@ public class ContactDate {
 
     public void setSelected(boolean selected){
         this.selected = selected;
+    }
+
+    public int getVisible(){
+        return visible;
+    }
+
+    public void setVisible(int visible){
+        this.visible = visible;
     }
 }
