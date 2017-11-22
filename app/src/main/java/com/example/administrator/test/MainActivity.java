@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void initDate() {
         list = new ArrayList<ContactDate>();
-        for(int i = 0; i < 10; i++) {
+        for(int i = 0; i < 20; i++) {
             contactDate = new ContactDate();
             contactDate.setSort("A");
             contactDate.setContactName("姓名" + String.valueOf(i));

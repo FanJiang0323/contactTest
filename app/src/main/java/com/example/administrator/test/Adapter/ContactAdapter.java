@@ -70,6 +70,7 @@ public class ContactAdapter extends BaseAdapter {
         holder.textView_ContactName.setText(contactDate.getContactName());
 //        holder.imageView_ContactIcon.setImageURI(contactDate.getIconUri());
         holder.textView_Sort.setVisibility(contactDate.getVisible());
+//        holder.textView_Sort.setVisibility(View.VISIBLE);
 
         return convertView;
     }
