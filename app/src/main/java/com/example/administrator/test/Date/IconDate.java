@@ -8,7 +8,7 @@ import android.net.Uri;
 
 public class IconDate {
 
-    public Uri iconUri = null;             //头像地址
+    private Uri iconUri = null;             //头像地址
 
     public Uri getIconUri(){
         return iconUri;

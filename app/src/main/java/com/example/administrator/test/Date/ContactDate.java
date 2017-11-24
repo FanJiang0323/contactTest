@@ -10,11 +10,11 @@ import java.net.URL;
  */
 
 public class ContactDate {
-    public  String  sort="";                //名字对应的字母
-    public  String  contactName = "";      //联系人姓名
-    public  Uri iconUri = null;             //头像地址
-    public  boolean selected=false;     //是否被选中
-    public  int visible= View.VISIBLE;      //是否显示字母    View.GONE  隐藏      View.INVISIBLE  不可见，但仍然占据空间     View.VISIBLE   可见
+    private   String  sort="";                //名字对应的字母
+    private  String  contactName = "";      //联系人姓名
+    private  Uri iconUri = null;             //头像地址
+    private  boolean selected=false;     //是否被选中
+    private  int visible= View.VISIBLE;      //是否显示字母    View.GONE  隐藏      View.INVISIBLE  不可见，但仍然占据空间     View.VISIBLE   可见
 
     public String getSort(){
         return  sort;

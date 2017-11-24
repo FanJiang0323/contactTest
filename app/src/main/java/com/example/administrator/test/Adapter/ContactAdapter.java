@@ -21,7 +21,7 @@ import java.util.List;
  * Created by Administrator on 2017-11-21.
  */
 
-public class ContactAdapter extends BaseAdapter {
+public class ContactAdapter extends BaseAdapter{
 
     private ArrayList<ContactDate> list = null;
     private Context mContext;
@@ -54,8 +54,9 @@ public class ContactAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder = null;
+        ContactDate contactDate = getItem(position);
         if (null == convertView) {
-            convertView = LayoutInflater.from(mContext).inflate(R.layout.contact_item, null);
+            convertView = LayoutInflater.from(mContext).inflate(R.layout.contact_item, parent, false);
             holder = new ViewHolder();
             holder.textView_Sort = convertView.findViewById(R.id.textView_sort);
             holder.textView_ContactName = convertView.findViewById(R.id.textView_contactName);
@@ -65,12 +66,17 @@ public class ContactAdapter extends BaseAdapter {
         }else {
             holder = (ViewHolder)convertView.getTag();
         }
-        ContactDate contactDate = getItem(position);
+
         holder.textView_Sort.setText(contactDate.getSort());
         holder.textView_ContactName.setText(contactDate.getContactName());
-//        holder.imageView_ContactIcon.setImageURI(contactDate.getIconUri());
         holder.textView_Sort.setVisibility(contactDate.getVisible());
-//        holder.textView_Sort.setVisibility(View.VISIBLE);
+        holder.checkBox_ContactIsCheck.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.e("checkBox","点击了一下checkBox");
+            }
+        });
+        holder.checkBox_ContactIsCheck.setChecked(contactDate.getSelected());
 
         return convertView;
     }

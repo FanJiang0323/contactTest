@@ -10,27 +10,50 @@
         android:id="@+id/listView_Icon"
         android:layout_width="match_parent"
         android:layout_height="57dp"
+        android:layout_marginStart="6dp"
         android:scrollbars="horizontal"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ListView
-        android:id="@+id/listView_Contact"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="120dp"
-        android:scrollbars="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="91dp"
-        android:textSize="14dp"
-        android:text="请选择巡查人员"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignBottom="@+id/textView"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="57dp"
+            android:background="@color/colorSortBackground" />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="91dp"
+            android:textSize="14dp"
+            android:text="请选择巡查人员"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <ListView
+            android:id="@+id/listView_Contact"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="120dp"
+            android:scrollbars="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+    </RelativeLayout>
+
+    <com.gjiazhe.wavesidebar.WaveSideBar
+        android:id="@+id/side_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingRight="8dp"
+        app:sidebar_position="right"
+        app:sidebar_lazy_respond="true"
+        app:sidebar_text_color="@color/colorContact"
+        app:sidebar_text_size="12dp"/>
 </android.support.constraint.ConstraintLayout>
